@@ -52,3 +52,15 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# KiCad
+# =========================
+.history/
+*-backups/
+*.kicad_prl
+*.lck
+_autosave-*
+*-bak
+*.kicad_sch-bak
+*.kicad_pcb-bak
+fp-info-cache

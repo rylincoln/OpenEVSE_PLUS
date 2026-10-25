@@ -1,0 +1,277 @@
+(footprint "MOLEX-1X6_LOCK"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "This footprint was designed to help hold the alignment of a through-hole component (i.e.  6-pin header) while soldering it into place.   You may notice that each hole has been shifted either up or down by 0.005 of an inch from it's more standard position (which is a perfectly straight line).   This slight alteration caused the pins (the squares in the middle) to touch the edges of the holes.  Because they are alternating, it causes a \"brace\"  to hold the component in place.  0.005 has proven to be the perfect amount of \"off-center\" position when using our standard breakaway headers. Although looks a little odd when you look at the bare footprint, once you have a header in there, the alteration is very hard to notice.  Also, if you push a header all the way into place, it is covered up entirely on the bottom side.  This idea of altering the position of holes to aid alignment  will be further integrated into the Sparkfun Library for other footprints.  It can help hold any component with 3 or more connection pins.")
+	(property "Reference" "REF**"
+		(at -1.27 -3.302 0)
+		(layer "F.SilkS")
+		(uuid "bb51f6de-0550-4a5c-ab38-0d6cf159fd50")
+		(effects
+			(font
+				(size 1.1684 1.1684)
+				(thickness 0.1016)
+			)
+			(justify left bottom)
+		)
+	)
+	(property "Value" "MOLEX-1X6_LOCK"
+		(at -1.27 4.064 0)
+		(layer "F.Fab")
+		(uuid "96e1e11d-9a42-401c-9e3f-ca25440b8bc0")
+		(effects
+			(font
+				(size 1.1684 1.1684)
+				(thickness 0.1016)
+			)
+			(justify left bottom)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "76aa6e59-7fe0-4afa-aa3e-472a39115407")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5a8c4b48-2188-4011-9cd4-451f6f54bbe1")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -1.27 -3.048)
+		(end -1.27 2.54)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "1d2978e7-b6bb-445c-92fc-6e3b0655e970")
+	)
+	(fp_line
+		(start 0 1.27)
+		(end 12.7 1.27)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "16594824-2fe2-469e-a186-5cc54ac7cf40")
+	)
+	(fp_line
+		(start 0 2.54)
+		(end -1.27 2.54)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "0521bf9d-fa28-4131-a27f-55e10db3304d")
+	)
+	(fp_line
+		(start 0 2.54)
+		(end 0 1.27)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "253501b5-05a2-49e1-bc01-b70736351c4c")
+	)
+	(fp_line
+		(start 12.7 1.27)
+		(end 12.7 2.54)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b992270b-af8f-4b58-aae8-7bebc58af84b")
+	)
+	(fp_line
+		(start 12.7 2.54)
+		(end 0 2.54)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "6fd904fb-f97c-4e99-aae8-7473ca1e24bc")
+	)
+	(fp_line
+		(start 13.97 -3.048)
+		(end -1.27 -3.048)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "747dc583-1f93-492c-8a3e-2bba000d3f80")
+	)
+	(fp_line
+		(start 13.97 -3.048)
+		(end 13.97 2.54)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "08d19a2f-7c0d-44be-8bfa-4f07f45e7bd5")
+	)
+	(fp_line
+		(start 13.97 2.54)
+		(end 12.7 2.54)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "dd8daf5b-4b4e-4f74-9d71-013103688da3")
+	)
+	(fp_poly
+		(pts
+			(xy -0.2921 0.4191) (xy 0.2921 0.4191) (xy 0.2921 -0.1651) (xy -0.2921 -0.1651)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "da3e8471-5708-46d5-9e78-86dbe2aed2a0")
+	)
+	(fp_poly
+		(pts
+			(xy 2.2479 0.4191) (xy 2.8321 0.4191) (xy 2.8321 -0.1651) (xy 2.2479 -0.1651)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "24228762-738c-4431-909e-23eb656e9b2c")
+	)
+	(fp_poly
+		(pts
+			(xy 4.7879 0.4191) (xy 5.3721 0.4191) (xy 5.3721 -0.1651) (xy 4.7879 -0.1651)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "877ca5f3-ae18-4514-beaa-356913352bc9")
+	)
+	(fp_poly
+		(pts
+			(xy 7.3279 0.4191) (xy 7.9121 0.4191) (xy 7.9121 -0.1651) (xy 7.3279 -0.1651)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "3737a862-9862-4b28-8b36-1a0c745a23da")
+	)
+	(fp_poly
+		(pts
+			(xy 9.8679 0.4191) (xy 10.4521 0.4191) (xy 10.4521 -0.1651) (xy 9.8679 -0.1651)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "c5745458-c6f0-4dce-a332-ca0519a4d9eb")
+	)
+	(fp_poly
+		(pts
+			(xy 12.4079 0.4191) (xy 12.9921 0.4191) (xy 12.9921 -0.1651) (xy 12.4079 -0.1651)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "7583079e-174e-4205-86bb-5fed237ee45c")
+	)
+	(pad "1" thru_hole circle
+		(at 0 0)
+		(size 1.8796 1.8796)
+		(drill 1.016)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.1016)
+		(thermal_bridge_angle 0)
+		(uuid "6564a50c-c706-4682-8191-2c634241dc42")
+	)
+	(pad "2" thru_hole circle
+		(at 2.54 0.254)
+		(size 1.8796 1.8796)
+		(drill 1.016)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.1016)
+		(thermal_bridge_angle 0)
+		(uuid "dd278e0f-3d48-4118-add5-aaa12e6a1c9a")
+	)
+	(pad "3" thru_hole circle
+		(at 5.08 0)
+		(size 1.8796 1.8796)
+		(drill 1.016)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.1016)
+		(thermal_bridge_angle 0)
+		(uuid "b2b19141-5dc6-49f0-a312-799f1ba93408")
+	)
+	(pad "4" thru_hole circle
+		(at 7.62 0.254)
+		(size 1.8796 1.8796)
+		(drill 1.016)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.1016)
+		(thermal_bridge_angle 0)
+		(uuid "3ad390c7-cc32-4f69-8a87-6a6984893c42")
+	)
+	(pad "5" thru_hole circle
+		(at 10.16 0)
+		(size 1.8796 1.8796)
+		(drill 1.016)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.1016)
+		(thermal_bridge_angle 0)
+		(uuid "9d38bde3-e3a7-43a1-a8af-4078d2e277c0")
+	)
+	(pad "6" thru_hole circle
+		(at 12.7 0.254)
+		(size 1.8796 1.8796)
+		(drill 1.016)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.1016)
+		(thermal_bridge_angle 0)
+		(uuid "4a9325c6-1545-4306-ae54-3390df7bb6fe")
+	)
+	(embedded_fonts no)
+)

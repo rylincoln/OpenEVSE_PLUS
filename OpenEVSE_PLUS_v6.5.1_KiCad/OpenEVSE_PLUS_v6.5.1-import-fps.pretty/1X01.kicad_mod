@@ -1,0 +1,76 @@
+(footprint "1X01"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 1.1938 -1.8288 0)
+		(layer "F.SilkS")
+		(uuid "c9536b40-8378-4a35-86ca-4a2d8b6d9d08")
+		(effects
+			(font
+				(size 1.1684 1.1684)
+				(thickness 0.1016)
+			)
+			(justify left bottom)
+		)
+	)
+	(property "Value" "1X01"
+		(at -1.27 3.175 0)
+		(layer "F.Fab")
+		(uuid "aa5acd4d-b39a-42d6-af07-09a7eeab4e9c")
+		(effects
+			(font
+				(size 1.1684 1.1684)
+				(thickness 0.1016)
+			)
+			(justify left bottom)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f7875d26-ebdf-448d-937e-b8e6ce1db0aa")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0cd9dbe3-21df-4949-9070-039e30f7a0d3")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_poly
+		(pts
+			(xy -0.254 0.254) (xy 0.254 0.254) (xy 0.254 -0.254) (xy -0.254 -0.254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "c8da5228-3a23-4c20-b2ba-81eee63363dd")
+	)
+	(pad "1" thru_hole circle
+		(at 0 0 90)
+		(size 2.6 2.6)
+		(drill 1.31)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.1016)
+		(thermal_bridge_angle 0)
+		(uuid "4f7218c7-ca73-44d0-ab02-5497a271359c")
+	)
+	(embedded_fonts no)
+)

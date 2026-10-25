@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repo is
 
-Hardware design files for the OpenEVSE PLUS board, an SAE J1772 / IEC 61851 EV charging station controller (ATmega328P MCU, pilot circuit, GFCI, AC detect/ground monitor, relay drivers and on-board power supply). There is nothing to build, lint or test. Every revision is in EAGLE except one KiCad 8 variant. Only v6.5.1 and newer matter (`OpenEVSE_PLUS_v6.5.1/` and `OpenEVSE_PLUS_v6.5.1_6Layer/`); treat older revision directories as archive. License: CC BY-SA 3.0.
+Hardware design files for the OpenEVSE PLUS board, an SAE J1772 / IEC 61851 EV charging station controller (ATmega328P MCU, pilot circuit, GFCI, AC detect/ground monitor, relay drivers and on-board power supply). There is nothing to build, lint or test. Every revision is in EAGLE except one KiCad 8 variant and the KiCad 10 port of v6.5.1. Only v6.5.1 and newer matter (`OpenEVSE_PLUS_v6.5.1/`, `OpenEVSE_PLUS_v6.5.1_KiCad/` and `OpenEVSE_PLUS_v6.5.1_6Layer/`); treat older revision directories as archive. License: CC BY-SA 3.0.
 
 ## Tools
 
@@ -15,7 +15,7 @@ Hardware design files for the OpenEVSE PLUS board, an SAE J1772 / IEC 61851 EV c
   - TI op-amp models download from `https://www.ti.com/lit/zip/<id>`.
   - PSpice-syntax libraries need `set ngbehavior=psa` in a `.spiceinit` in the working directory.
 - **EAGLE:** not installed, so read EAGLE files as XML (below).
-- **`docs/research/`:** the v6.5.1 design review, BOM, sourcing research and the scripts that produced them (`scripts/`). Check there before re-deriving BOM, connectivity, mains-spacing or pilot-simulation results.
+- **`docs/research/`:** the v6.5.1 design review, BOM, sourcing research and the scripts that produced them (`scripts/`). Check there before re-deriving BOM, connectivity, mains-spacing or pilot-simulation results. `scripts/netcmp.py` compares nets pad for pad between any two of EAGLE `.brd`, `.kicad_pcb` and KiCad netlist; `scripts/port/` holds the scripts that turned the raw EAGLE import into the KiCad project.
 
 ## Layout
 
@@ -31,7 +31,9 @@ What each file in a revision directory is:
 
 EAGLE file versions range from 6.0 (v1) to 9.6.2 (v5.5, v6.5.1).
 
-`OpenEVSE_PLUS_v6.5.1_6Layer/` is the exception. It is a KiCad 8 project (`v6_6layer.kicad_*`) for a 6-layer board: F.Cu, In1 GND_F, In2 PWR, In3 signal, In4 GND_B, B.Cu. Its Gerbers and drill files are loose `.gbr`/`.drl` files, not zipped. The README doesn't mention it yet. It was imported from EAGLE (its symbol libraries are named `OpenEVSE_PLUS_v6.5RC2-eagle-import`), so it doesn't match the EAGLE v6.5.1 design exactly:
+`OpenEVSE_PLUS_v6.5.1_KiCad/` is the KiCad 10 port of the 2-layer v6.5.1 board, verified pad for pad against the EAGLE board. Its `README.md` records what the port changed relative to the raw import, the accepted ERC/DRC baseline and the remaining GUI step. Libraries are project-local (`*-eagle-import.kicad_sym`, `*-import-fps.pretty/`). New design work goes in this project; the EAGLE files are the upstream reference.
+
+`OpenEVSE_PLUS_v6.5.1_6Layer/` is the other non-EAGLE directory. It is a KiCad 8 project (`v6_6layer.kicad_*`) for a 6-layer board: F.Cu, In1 GND_F, In2 PWR, In3 signal, In4 GND_B, B.Cu. Its Gerbers and drill files are loose `.gbr`/`.drl` files, not zipped. The README doesn't mention it yet. It was imported from EAGLE (its symbol libraries are named `OpenEVSE_PLUS_v6.5RC2-eagle-import`), so it doesn't match the EAGLE v6.5.1 design exactly:
 
 - Connector references gained a `0` suffix (`AC`→`AC0`, `FTDI`→`FTDI0`, `PILOT`→`PILOT0`).
 - `C28`, the fiducials and `SH1`/`SH2` are missing.

@@ -1,0 +1,214 @@
+(footprint "SMA"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "SMA CASE 403D-02\n\nSource: http://www.onsemi.com/pub_link/Collateral/MBRA340T3-D.PDF")
+	(property "Reference" "REF**"
+		(at -2.75 -2 0)
+		(layer "F.SilkS")
+		(uuid "b8140056-05c9-4f03-8805-609b58585d09")
+		(effects
+			(font
+				(size 1.143 1.143)
+				(thickness 0.127)
+			)
+			(justify left bottom)
+		)
+	)
+	(property "Value" "SMA"
+		(at -2.75 3.5 0)
+		(layer "F.Fab")
+		(uuid "80ea07e3-c199-450d-b81a-0d48598115c4")
+		(effects
+			(font
+				(size 1.143 1.143)
+				(thickness 0.127)
+			)
+			(justify left bottom)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e2ae435e-9f5f-4a3b-87bb-22f31ff31e28")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f38d80cb-992b-4fbf-b33b-98bdac9bcbac")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -2.25 -1.825)
+		(end -2.25 -1.25)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "9d02c6d2-fb62-4ca4-ac3d-7d50cc4f74c5")
+	)
+	(fp_line
+		(start -2.25 -1.825)
+		(end 2.25 -1.825)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "1aeb8ad8-7440-4158-ad18-bc9026516d18")
+	)
+	(fp_line
+		(start -2.25 1.825)
+		(end -2.25 1.25)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "5a5741c7-85c7-4103-bedc-fc63622f9af3")
+	)
+	(fp_line
+		(start 2.25 -1.825)
+		(end 2.25 -1.25)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "c4f7bdae-849e-4832-8ef8-0445b0fe6e29")
+	)
+	(fp_line
+		(start 2.25 1.825)
+		(end -2.25 1.825)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "29b06c0e-c221-4644-a707-278aaca90f09")
+	)
+	(fp_arc
+		(start 2.25 1.825)
+		(mid 2.247611 1.5375)
+		(end 2.25 1.25)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "4b863432-148b-4c84-911a-9fbe5f741674")
+	)
+	(fp_poly
+		(pts
+			(xy -1.5 -1.25) (xy -0.75 -1.25) (xy -0.75 -1.75) (xy -1.5 -1.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "bebe4123-08cb-47cd-b8d1-0543584cad92")
+	)
+	(fp_poly
+		(pts
+			(xy -1.5 1.75) (xy -0.75 1.75) (xy -0.75 1.25) (xy -1.5 1.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "0bc45b49-f258-4515-a231-13366828f397")
+	)
+	(fp_line
+		(start -2.25 1.25)
+		(end -2.25 -1.25)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "11a5f77f-ceaa-4f90-9186-0e4c4a3e3cf8")
+	)
+	(fp_line
+		(start 2.25 -1.25)
+		(end 2.25 1.25)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "eb9accad-bf7b-49c1-afc5-760b3e3a7fc3")
+	)
+	(fp_poly
+		(pts
+			(xy -2.8 0.8) (xy -2.38 0.8) (xy -2.38 -0.8) (xy -2.8 -0.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "630ebf82-1d54-4de4-b7be-912f2985b77e")
+	)
+	(fp_poly
+		(pts
+			(xy -1.5 1.75) (xy -0.75 1.75) (xy -0.75 -1.75) (xy -1.5 -1.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "69ba8c9a-eba9-4939-b986-7500eae4ed6f")
+	)
+	(fp_poly
+		(pts
+			(xy 2.38 0.825) (xy 2.8 0.825) (xy 2.8 -0.8) (xy 2.38 -0.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "42ca5e7f-a6b7-4806-92cf-f22c42198cbe")
+	)
+	(pad "A" smd rect
+		(at 2 0)
+		(size 2 2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.1016)
+		(solder_paste_margin 0)
+		(thermal_bridge_angle 0)
+		(uuid "10c69f41-974a-4dfe-b310-0061efb5256a")
+	)
+	(pad "C" smd rect
+		(at -2 0)
+		(size 2 2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.1016)
+		(solder_paste_margin 0)
+		(thermal_bridge_angle 0)
+		(uuid "d36c85e0-fcb2-4fb6-b2c6-a1ba60fb8129")
+	)
+	(embedded_fonts no)
+)
