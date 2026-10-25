@@ -4,7 +4,7 @@ A 1:1 port of `../OpenEVSE_PLUS_v6.5.1/OpenEVSE_PLUS_v6.5.1.sch` / `.brd` (EAGLE
 
 ## How it was made
 
-1. KiCad 10 GUI, EAGLE project import of the `.sch`/`.brd`, saved into this directory. The importer embeds the EAGLE libraries as `OpenEVSE_PLUS_v6.5.1-eagle-import.kicad_sym` and `OpenEVSE_PLUS_v6.5.1-import-fps.pretty/`, both project-local.
+1. KiCad 10 GUI, EAGLE project import of the `.sch`/`.brd`, saved into this directory (then Update PCB from Schematic as the final step, see below). The importer embeds the EAGLE libraries as `OpenEVSE_PLUS_v6.5.1-eagle-import.kicad_sym` and `OpenEVSE_PLUS_v6.5.1-import-fps.pretty/`, both project-local.
 2. `docs/research/scripts/port/sch_fix.py` on the schematic, driven by the ERC report and the EAGLE `.sch`:
    - 40 wire stubs trimmed back to their net labels and 3 EAGLE dangling stubs removed (AMP_READ, GFCI_INT, ACRELAY) — none changed a net.
    - 1 junction restored where the importer dropped an EAGLE T-connection (U1 FB onto +5V).
@@ -51,14 +51,18 @@ DRC (`--refill-zones`): 0 unconnected items, 3 errors, 230 warnings. The raw imp
 
 Zone fills are not stored in the files; press **B** (Refill zones) after opening the board.
 
-## Remaining step: link board to schematic
+## Board ↔ schematic link
 
-The imported footprints carry no link to the schematic symbols yet. In the schematic editor run **Tools → Update PCB from Schematic** with *Re-link footprints to schematic symbols based on their reference designators* ON and *Delete footprints with no symbols* OFF. Footprint IDs already agree for all 115 parts, so nothing moves or swaps. Expected changes:
+The imported footprints carried no link to the schematic symbols, so the last step was **Tools → Update PCB from Schematic** in the KiCad GUI (re-link by reference designator ON, replace footprints ON, delete footprints with no symbols OFF, update fields ON). It reported 0 errors and 4 warnings (FID1–FID4 have a copper pad "1" that the fiducial symbol has no pin for; the pad has no net in EAGLE either).
 
-- 30 EAGLE auto-named nets `N$…` take KiCad names `Net-(…)`.
-- 21 symbol fields (PROD_ID, MPN, MF, BOM, …) copied to footprints.
-- I2C0, JP2 and PILOT0 get their symbol values (`M04JST-PTH-VERT`, `M06POLAR_LOCK`, `M025MM` — EAGLE deviceset names, as these parts had no value).
-- The 5 open pads get `unconnected-…` nets.
+`docs/research/scripts/port/pcb_geomdiff.py` compared the board before and after, matching nets by the pads they connect: 686 segments, 63 vias, 6 zones, 21 board graphics and all 117 footprint placements, pads and attributes identical. The only changes were the predicted ones:
+
+- 30 EAGLE auto-named nets `N$…` took KiCad names `Net-(…)`.
+- 21 symbol fields (PROD_ID, MPN, MF, BOM, …) were copied to footprints; I2C0, JP2 and PILOT0 got their symbol values (`M04JST-PTH-VERT`, `M06POLAR_LOCK`, `M025MM` — EAGLE deviceset names, as these parts had no value).
+- The 5 open pads (D1.3, D11.3, IC4 LV/OSC, IC7.5) got `unconnected-…` nets.
+- Footprints gained their sheet path links.
+
+After the update, netcmp again reports 0 differing nets against both the EAGLE board and the schematic netlist, and DRC is unchanged (0 unconnected, the same 3 errors). `kicad-cli pcb drc --schematic-parity` still lists 22 `net_conflict` items: its parity check names nets on multi-unit symbols without the unit letter (`Net-(IC3--IN1)`), while the GUI update and `kicad-cli sch export netlist` both write `Net-(IC3A--IN1)`. Same nets, different auto-names; the GUI's own parity check does not report them.
 
 ## Known differences from the EAGLE files
 

@@ -15,7 +15,7 @@ Hardware design files for the OpenEVSE PLUS board, an SAE J1772 / IEC 61851 EV c
   - TI op-amp models download from `https://www.ti.com/lit/zip/<id>`.
   - PSpice-syntax libraries need `set ngbehavior=psa` in a `.spiceinit` in the working directory.
 - **EAGLE:** not installed, so read EAGLE files as XML (below).
-- **`docs/research/`:** the v6.5.1 design review, BOM, sourcing research and the scripts that produced them (`scripts/`). Check there before re-deriving BOM, connectivity, mains-spacing or pilot-simulation results. `scripts/netcmp.py` compares nets pad for pad between any two of EAGLE `.brd`, `.kicad_pcb` and KiCad netlist; `scripts/port/` holds the scripts that turned the raw EAGLE import into the KiCad project.
+- **`docs/research/`:** the v6.5.1 design review, BOM, sourcing research and the scripts that produced them (`scripts/`). Check there before re-deriving BOM, connectivity, mains-spacing or pilot-simulation results. `scripts/netcmp.py` compares nets pad for pad between any two of EAGLE `.brd`, `.kicad_pcb` and KiCad netlist; `scripts/port/` holds the scripts that turned the raw EAGLE import into the KiCad project, plus `pcb_geomdiff.py`, which diffs two `.kicad_pcb` files as geometry (ignores uuids, order and net renames) — use it to check that a GUI save changed only what it should.
 
 ## Layout
 
