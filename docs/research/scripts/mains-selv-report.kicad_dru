@@ -1,0 +1,11 @@
+(version 1)
+# Reporting rules: flags every mains-to-low-voltage copper pair closer than 10 mm, with the actual distance.
+# Mains = L/N, contactor coil, AC test and the mains side of the IC8 AC-detect inputs; PE is excluded.
+# Copy next to a board as <board>.kicad_dru, then:
+#   kicad-cli pcb drc --refill-zones --severity-error --format json -o hv.json <board>.kicad_pcb
+(rule "mains_selv_clearance"
+  (constraint clearance (min 10mm))
+  (condition "(A.NetName == 'ACLIN' || A.NetName == 'ACNIN' || A.NetName == 'ACRELAY' || A.NetName == 'ACTEST1' || A.NetName == 'ACTEST2' || A.NetName == 'N$31' || A.NetName == 'N$13' || A.NetName == 'N$17' || A.NetName == 'N$22' || A.NetName == 'N$28' || A.NetName == 'N$6' || A.NetName == 'N$9' || A.NetName == 'N$29' || A.NetName == 'N$30' || A.NetName == 'N$1' || A.NetName == 'N$2') && (B.NetName != 'ACLIN' && B.NetName != 'ACNIN' && B.NetName != 'ACRELAY' && B.NetName != 'ACTEST1' && B.NetName != 'ACTEST2' && B.NetName != 'N$31' && B.NetName != 'N$13' && B.NetName != 'N$17' && B.NetName != 'N$22' && B.NetName != 'N$28' && B.NetName != 'N$6' && B.NetName != 'N$9' && B.NetName != 'N$29' && B.NetName != 'N$30' && B.NetName != 'N$1' && B.NetName != 'N$2' && B.NetName != 'PE')"))
+(rule "mains_selv_creepage"
+  (constraint creepage (min 10mm))
+  (condition "(A.NetName == 'ACLIN' || A.NetName == 'ACNIN' || A.NetName == 'ACRELAY' || A.NetName == 'ACTEST1' || A.NetName == 'ACTEST2' || A.NetName == 'N$31' || A.NetName == 'N$13' || A.NetName == 'N$17' || A.NetName == 'N$22' || A.NetName == 'N$28' || A.NetName == 'N$6' || A.NetName == 'N$9' || A.NetName == 'N$29' || A.NetName == 'N$30' || A.NetName == 'N$1' || A.NetName == 'N$2') && (B.NetName != 'ACLIN' && B.NetName != 'ACNIN' && B.NetName != 'ACRELAY' && B.NetName != 'ACTEST1' && B.NetName != 'ACTEST2' && B.NetName != 'N$31' && B.NetName != 'N$13' && B.NetName != 'N$17' && B.NetName != 'N$22' && B.NetName != 'N$28' && B.NetName != 'N$6' && B.NetName != 'N$9' && B.NetName != 'N$29' && B.NetName != 'N$30' && B.NetName != 'N$1' && B.NetName != 'N$2' && B.NetName != 'PE')"))

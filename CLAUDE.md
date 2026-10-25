@@ -4,7 +4,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repo is
 
-Hardware design files for the OpenEVSE PLUS board, an SAE J1772 / IEC 61851 EV charging station controller (ATmega328P MCU, pilot circuit, GFCI, AC detect/ground monitor, relay drivers and on-board power supply). There is nothing to build, lint or test. Every revision is in EAGLE except one KiCad 8 variant. Neither EAGLE nor KiCad (`kicad-cli`) is installed on this machine, so inspect the designs as text (see below). License: CC BY-SA 3.0.
+Hardware design files for the OpenEVSE PLUS board, an SAE J1772 / IEC 61851 EV charging station controller (ATmega328P MCU, pilot circuit, GFCI, AC detect/ground monitor, relay drivers and on-board power supply). There is nothing to build, lint or test. Every revision is in EAGLE except one KiCad 8 variant. Only v6.5.1 and newer matter (`OpenEVSE_PLUS_v6.5.1/` and `OpenEVSE_PLUS_v6.5.1_6Layer/`); treat older revision directories as archive. License: CC BY-SA 3.0.
+
+## Tools
+
+- **`kicad-cli` (KiCad 10):** at `/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli`, not on PATH.
+  - It runs ERC, DRC and exports, and it imports EAGLE boards (`pcb import --format eagle`).
+  - DRC with `--refill-zones` and `upgrade` rewrite files, so run it on copies in the scratchpad.
+- **`ngspice`:** on PATH.
+  - TI op-amp models download from `https://www.ti.com/lit/zip/<id>`.
+  - PSpice-syntax libraries need `set ngbehavior=psa` in a `.spiceinit` in the working directory.
+- **EAGLE:** not installed, so read EAGLE files as XML (below).
+- **`docs/research/`:** the v6.5.1 design review, BOM, sourcing research and the scripts that produced them (`scripts/`). Check there before re-deriving BOM, connectivity, mains-spacing or pilot-simulation results.
 
 ## Layout
 
